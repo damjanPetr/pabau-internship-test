@@ -1,0 +1,136 @@
+:root {
+  --radius: 4px;
+  --primary: hsl(0, 100%, 100%, 0.9);
+  --secondary: hsl(0, 0%, 0%, 0.2);
+}
+
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: var(--radius);
+}
+
+body {
+  background-color: hsl(228, 69%, 69%);
+  background-image: url("/escheresque.png");
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  font: bold 18px;
+
+  .wrapper {
+    margin-top: 15vh;
+    border-radius: 4px;
+
+    padding: 0.2rem;
+
+    border-radius: var(--radius);
+    grid-template-rows: repeat(10, 1fr);
+    display: grid;
+    background: var(--primary);
+    row-gap: 10px;
+    .row {
+      display: grid;
+      column-gap: 10px;
+      grid-template-columns: repeat(9, auto);
+    }
+    .cell {
+      transition: all 0.1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      background: hsl(187, 28%, 88%);
+      border-radius: var(--radius);
+
+      border: 1px solid #000;
+      width: 20px;
+      height: 20px;
+      &.active {
+        background: hsl(93, 72%, 57%);
+        transform: translateY(-2px);
+        border-radius: 8px;
+      }
+      &.path {
+        filter: saturate(3);
+      }
+      &.letter {
+        background: rgb(143, 163, 228);
+        color: white;
+      }
+      &.visited {
+        background: rgb(164, 177, 221);
+        filter: darken(1);
+        transform: translateY(4px);
+        filter: drop-shadow(1px 1px 1px #000);
+
+        &.letter {
+          background: rgb(89, 119, 218);
+        }
+      }
+    }
+  }
+}
+.results {
+  color: white;
+  padding: 10px;
+  background: var(--secondary);
+  margin-top: 0.5rem;
+  > div {
+    display: flex;
+    justify-self: space-between;
+    align-items: center;
+
+    &:last-child {
+      margin-top: 10px;
+    }
+    p {
+      font-weight: bolder;
+      flex-basis: 20%;
+    }
+    span {
+      padding: 3px;
+      background: rgb(0, 53, 53);
+      letter-spacing: 2px;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+  }
+}
+.controls {
+  margin-top: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #000;
+  background: var(--primary);
+
+  button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background: rgb(174, 174, 239);
+    &.active {
+      color: black;
+      background: hsl(0, 74%, 85%);
+    }
+  }
+  select {
+    background: var(--primary);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    option {
+      width: 100%;
+    }
+  }
+  :where(button, select):hover,
+  :focus {
+    outline: 3px solid #1927e4;
+  }
+}
