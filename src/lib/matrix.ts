@@ -1,5 +1,3 @@
-import { challengeInput } from "./data";
-
 class Matrix {
   public fullPath!: string;
   public matrix: string[][];
@@ -17,7 +15,6 @@ class Matrix {
     }
   }
 
-  generate() {}
   static createEmptyMatrix(columns: number, rows: number) {
     const matrix: string[][] = [];
     for (let i = 0, len = rows; i < len; i++) {
@@ -65,31 +62,26 @@ class Matrix {
       // check if the index is a turn or start point
       if (index === "+" || index.match(/[A-Z>]/) || index === ">") {
         if (dimension === "Horizontal") {
-          // if (index === ">") {
-          //   dimension = "Vertical";
-          //   path = ">";
-          // }
-
           if (bottomNeighbor?.match(verticalRegEx)) {
             direction = "bottom";
-            console.log("bottom h");
+
             dimension = "Vertical";
           }
 
           if (topNeighbor?.match(verticalRegEx)) {
             direction = "top";
-            console.log("top h");
+
             dimension = "Vertical";
           }
         } else if (dimension === "Vertical") {
           if (rightNeighbor?.match(horizontalRegEx)) {
             direction = "right";
-            console.log("right v");
+
             dimension = "Horizontal";
           }
           if (leftNeighbor?.match(horizontalRegEx)) {
             direction = "left";
-            console.log("left v");
+
             dimension = "Horizontal";
           }
         }
@@ -132,10 +124,5 @@ class Matrix {
     return path;
   }
 }
-
-const play = new Matrix(challengeInput);
-
-console.log(play.findLetters());
-console.log(play.pathCoordinates);
 
 export default Matrix;
