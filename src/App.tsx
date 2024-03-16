@@ -56,11 +56,9 @@ function App() {
 
   useEffect(() => {
     let interval: NodeJS.Timeout | undefined;
-    console.log(finished);
     if (finished && !active) {
       setIndex(0);
       setProgressIndexes([]);
-      console.log("%c 'FINISHED", "background: pink");
       setActive(true);
       return;
     }
