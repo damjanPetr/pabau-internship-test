@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Pabau Intership application assignment.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The objective of this assignment is to identify the specific path or route in the matrix and collect every uppercase letter.
 
-## Expanding the ESLint configuration
+![assignment Matrix](image.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+In addition to the assignment matrix, I've included three other matrices to ensure that my solution is versatile and thoroughly tested.
 
-- Configure the top-level `parserOptions` property like this:
+----
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+If you'd like to see the code in action in real-time, please install the dependencies using npm install, then run the development server with npm run dev. Alternatively, you can simply open the online **[DEMO](https://65f5d6f35ee8bcdc0dde8cc6--adorable-malabi-f1e606.netlify.app/)** in a web browser.
+
+I've also included basic tests which you can run using Jest or Vitest. Execute the tests with npm run test.
+
+Enjoy!
+
