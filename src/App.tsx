@@ -76,7 +76,7 @@ function App() {
         setIndex((prev) =>
           Math.min(prev + 1, memoMatrix.pathCoordinates.length - 1)
         );
-      }, 80);
+      }, 50);
     }
     return () => {
       clearInterval(interval);
